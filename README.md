@@ -1,4 +1,4 @@
-# dotnet-appsettings-env
+# uuid-gen
 
 uuid-gen is a command line tool to generate UUID Version1 / Version4.
 
