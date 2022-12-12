@@ -16,11 +16,11 @@ https://github.com/dassump/uuid-gen
 
 Usage of uuid-gen:
   -count int
-        How many to generate (default 1)
+        How many UUIDs to generate (default 1)
   -quotation string
-        Quotation character
+        Quotation character(s)
   -separator string
-        Separator character (default "\n")
+        Separator character(s) (default "\n")
   -type string
         UUID Version1 (v1) / Version4 (v4) (default "v4")
 ```
