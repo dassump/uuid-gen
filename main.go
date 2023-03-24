@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/google/uuid"
 )
@@ -25,6 +26,15 @@ var (
 		"v4": uuid.NewRandom,
 	}
 
+	replacer = strings.NewReplacer(
+		`\b`, "\b", // backspace
+		`\f`, "\f", // form feed
+		`\n`, "\n", // line feed or newline
+		`\r`, "\r", // carriage return
+		`\t`, "\t", // horizontal tab
+		`\v`, "\v", // vertical tab
+	)
+
 	logger = log.New(os.Stderr, "(ERROR) ", log.Lmsgprefix+log.LstdFlags)
 )
 
@@ -41,6 +51,9 @@ func init() {
 		flag.Usage()
 		logger.Fatalf("Type %s is not valid", *output)
 	}
+
+	*quotation = replacer.Replace(*quotation)
+	*separator = replacer.Replace(*separator)
 }
 
 func main() {

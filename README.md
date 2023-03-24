@@ -112,8 +112,20 @@ $ uuid-gen -count 10 -quotation \'
 ### Together
 
 ```shell
-$ uuid-gen -type v4 -count 10 -quotation \" -separator ,   
+$ uuid-gen -type v4 -count 10 -quotation \" -separator ,
 "2fe89fc3-0299-419d-a4ec-932d253e55d7","fe0a2126-4c43-489e-a4d1-e1d240ded9c1","c59e0f76-fcc9-4325-a31a-c4882a3fe363","ad8897f0-caf5-47e1-a4c8-cc0afaac21a6","9dea86ff-d0be-4267-ab57-dffe1e6b1c4c","8f8db9af-aef4-443e-a354-a1164af9557d","83124d13-a574-4edb-98dc-5ec40e0015b7","cc4f9970-6a0f-44ce-97f6-2dd42776b77f","40e95a40-79f1-494c-958b-d58a512ed6cf","af3f5de9-711e-4d16-a3f5-46df8dfda7cb"
+
+$ uuid-gen -type v4 -count 10 -quotation \' -separator ",\n"
+'faf3a589-7847-4178-a0e1-2827685b567b',
+'7e448cea-1ff9-4c88-8040-3e0e1ddf8de5',
+'d5207de2-b130-4703-8f06-ebab27900fbf',
+'bd277752-8801-46d8-b0ba-c47dde008944',
+'07776694-6ae7-4ad6-8650-f66159cecaea',
+'4b5ec9ac-249b-47fd-966c-b22fe0922adc',
+'5218edd2-90d1-4ca0-83cc-9f5b8df752e9',
+'d6739b11-ab03-4d8d-859b-e8a8f0c2a8a9',
+'ead97661-0631-47f0-ac4e-191e559798b1',
+'2b50c677-5f7d-4847-baa7-20981a679218'
 ```
 
 ### Shell
@@ -164,6 +176,17 @@ for UUID in ${TMPFILES[@]}; do; echo $UUID; done
 /tmp/tmpfile.1e9541a4-fb1c-4c4f-bd22-327472b52f9e
 /tmp/tmpfile.57e61cdb-1413-4494-8e6e-0315b415e922
 /tmp/tmpfile.690c558e-ad05-485f-abaf-eb389460b899
+```
+
+```shell
+printf "[\n\t$(go run . -count 5 -quotation \' -separator ',\n\t'),\n]"
+[
+	'58b011a5-0973-4b62-b88b-23c63fd5a55e',
+	'e8b7c7d3-910d-48b1-9b8f-b95f9f3f349e',
+	'cebb8f2f-0781-4cfc-b535-a092187beeeb',
+	'67bd37c8-5f77-435e-9205-3e7cb0fa530b',
+	'9690917e-f0e1-45eb-b07f-3fa65b35ef1c',
+]
 ```
 
 ## Contributing
