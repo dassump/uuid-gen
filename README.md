@@ -179,7 +179,7 @@ for UUID in ${TMPFILES[@]}; do; echo $UUID; done
 ```
 
 ```shell
-printf "[\n\t$(go run . -count 5 -quotation \' -separator ',\n\t'),\n]"
+printf "[\n\t$(uuid-gen -count 5 -quotation \' -separator ',\n\t'),\n]"
 [
 	'58b011a5-0973-4b62-b88b-23c63fd5a55e',
 	'e8b7c7d3-910d-48b1-9b8f-b95f9f3f349e',
